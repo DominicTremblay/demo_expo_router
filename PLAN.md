@@ -56,7 +56,9 @@ const Layout = () => {
 export default Layout
 ```
 
-## Navigation Stack
+## Navigation
+
+### Navigation Stack
 
 La navigation stack (pile) est une méthode de navigation en React Navigation qui organise les écrans dans une pile, où chaque nouvel écran s'empile au-dessus du précédent, permettant de revenir en arrière avec un comportement de "pile LIFO" (dernier entré, premier sorti).
 
@@ -83,130 +85,12 @@ La navigation stack (pile) est une méthode de navigation en React Navigation qu
 +-----------------------+
 ```
 
+### Navigation Tabs
+
+- Tabs dans le bas de l'écran
+
 ## Facons de naviguer
 
 - Avec Link
 - Avec le hook useRouter
-
-- 1. Link
-
-```js
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Demo Routeur Expo</Text>
-      <Link href="/films" style={styles.link}>Voir les films</Link>
-      <StatusBar style="auto" />
-    </View>
-  )
-}```
-
-- 2. UseRouter
-
-- Le routeur Expo expose un hook `useRouter`
-
-```js
-const FilmsScreen = () => {
-  const router = useRouter()
-
-  return (
-    <View style={styles.container}>
-      <Text>Vue Films</Text>
-      <TouchableOpacity onPress={() => router.push('/utilisateurs')}>
-        <Text
-          style={{
-            fontSize: 24,
-          }}
-        >
-          Voir les utilisateurs
-        </Text>
-      </TouchableOpacity>
-    </View>
-  )
-}
-```
-
-### Ajouter des options
-
-- presentation
-- animation
-
-```js
-import React from 'react'
-import { Stack } from 'expo-router'
-
-const Layout = () => {
-  return (
-    <Stack>
-      <Stack.Screen name="index" options={{ title: 'Accueil' }} />
-      <Stack.Screen name="films" options={{ title: 'Films' }} />
-      <Stack.Screen name="utilisateurs" options={{ title: 'Utilisateurs' }} />
-      <Stack.Screen
-        name="session"
-        options={{ title: 'Ouvrir session', presentation: 'modal', animation: 'slide_from_bottom' }}
-      />
-    </Stack>
-  )
-}
-
-export default Layout
-```
-
-
-## Navigation Tabs
-
-```js
-import React from 'react'
-import { Tabs } from 'expo-router'
-
-const Layout = () => {
-  return (
-    <Tabs>
-      <Tabs.Screen name="index" options={{ title: 'Accueil' }} />
-      <Tabs.Screen name="films" options={{ title: 'Films' }} />
-      <Tabs.Screen name="utilisateurs" options={{ title: 'Utilisateurs' }} />
-      <Tabs.Screen
-        name="session"
-        options={{ title: 'Ouvrir session'}}
-      />
-    </Tabs>
-  )
-}
-
-export default Layout
-```
-
-- Utiliser des icones de navigation 
-- [Expo Vector Icons](https://icons.expo.fyi/Index)
-
-```js
-import React from 'react'
-import { Tabs } from 'expo-router'
-import AntDesign from '@expo/vector-icons/AntDesign'
-
-const Layout = () => {
-  return (
-    <Tabs>
-      <Tabs.Screen name="index" options={{ title: 'Accueil' }} />
-      <Tabs.Screen name="films" options={{ title: 'Films' }} />
-      <Tabs.Screen
-        name="utilisateurs"
-        options={{
-          title: 'Utilisateurs',
-
-          tabBarIcon: ({color}) => <AntDesign name="user" size={24} color={color} />,
-        }}
-      />
-      <Tabs.Screen name="session" options={{ title: 'Ouvrir session' }} />
-    </Tabs>
-  )
-}
-
-export default Layout
-```
-
-
-
-
-
 
