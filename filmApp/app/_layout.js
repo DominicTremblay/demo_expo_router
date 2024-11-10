@@ -1,17 +1,22 @@
 import React from 'react'
-import { Stack } from 'expo-router'
+import { Tabs } from 'expo-router'
+import AntDesign from '@expo/vector-icons/AntDesign'
 
 const Layout = () => {
   return (
-    <Stack>
-      <Stack.Screen name="index" options={{ title: 'Accueil' }} />
-      <Stack.Screen name="films" options={{ title: 'Films' }} />
-      <Stack.Screen name="utilisateurs" options={{ title: 'Utilisateurs' }} />
-      <Stack.Screen
-        name="session"
-        options={{ title: 'Ouvrir session', presentation: 'modal', animation: 'slide_from_bottom' }}
+    <Tabs>
+      <Tabs.Screen name="index" options={{ title: 'Accueil' }} />
+      <Tabs.Screen name="films" options={{ title: 'Films' }} />
+      <Tabs.Screen
+        name="utilisateurs"
+        options={{
+          title: 'Utilisateurs',
+
+          tabBarIcon: ({color}) => <AntDesign name="user" size={24} color={color} />,
+        }}
       />
-    </Stack>
+      <Tabs.Screen name="session" options={{ title: 'Ouvrir session' }} />
+    </Tabs>
   )
 }
 
