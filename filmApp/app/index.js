@@ -7,6 +7,8 @@ export default function App() {
     <View style={styles.container}>
       <Text>Demo Routeur Expo</Text>
       <Link href="/films" style={styles.link}>Voir les films</Link>
+      <Link href="/utilisateurs" style={styles.link}>Voir les utilisateurs</Link>
+      <Link href="/session" style={styles.link}>Ouvrir une session</Link>
       <StatusBar style="auto" />
     </View>
   )
