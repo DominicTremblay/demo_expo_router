@@ -23,7 +23,9 @@ const Layout = () => {
           },
         }}
       />
+      <Stack.Screen name="[id]" options={{ title: 'Détails du film' }} />
     </Stack>
+
   )
 }
 

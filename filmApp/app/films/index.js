@@ -17,6 +17,9 @@ const FilmsScreen = () => {
           Voir les utilisateurs
         </Text>
       </TouchableOpacity>
+      <TouchableOpacity onPress={() => router.push('/films/1')}>
+        <Text style={{ fontSize: 24 }}>Voir le film 1</Text>
+      </TouchableOpacity>
     </View>
   )
 }
